@@ -5,7 +5,7 @@ from .models import Post, Comment
 class PostForm(forms.ModelForm):
     class Meta():
         model = Post
-        field = {'author', 'title', 'text'}
+        fields = {'author', 'title', 'text'}
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'textinputclass'}),
@@ -16,7 +16,7 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta():
         model = Comment
-        field = {'author', 'text'}
+        fields = {'author', 'text'}
 
         widgets = {
             'author': forms.TextInput(attrs={'class': 'textinputclass'}),
